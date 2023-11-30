@@ -1,5 +1,1 @@
-/data
-/data/*
-/data/mysql
-/data/performance_schema
-/data/sklad
+data/

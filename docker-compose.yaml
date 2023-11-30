@@ -10,7 +10,7 @@ services:
       - "3306:3306"
     volumes:
       - ./sklad:/docker-entrypoint-initdb.d
-      - ./data:/var/lib/mysql
+      - mysql:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=sklad
@@ -28,3 +28,4 @@ services:
 
 volumes:
   sklad:
+  mysql:

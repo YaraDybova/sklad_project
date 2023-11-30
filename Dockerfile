@@ -1,9 +1,9 @@
 FROM python:3.8-slim-buster
 WORKDIR /myapp
 COPY . /myapp
-RUN pip install pylint pylint-flask
+RUN pip install pylint
 RUN pip install -r requirements.txt
-RUN pylint --load-plugins pylint_flask ./app/*.py
+RUN pylint ./app/*.py
 ENV FLASK_APP=/myapp/app/app.py
 ENV FLASK_RUN_HOST=0.0.0.0
 EXPOSE 5000

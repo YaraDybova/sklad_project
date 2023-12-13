@@ -6,7 +6,7 @@ RUN pip install pylint-exit
 RUN pip install sqlfluff
 RUN pip install -r requirements.txt
 RUN pylint ./app/*.py || pylint-exit $?
-RUN sqlfluff lint ./scheme/sql.sql --dialect ansi
+RUN sqlfluff lint ./sklad/sklad.sql --dialect ansi
 ENV FLASK_APP=/myapp/app/app.py
 ENV FLASK_RUN_HOST=0.0.0.0
 EXPOSE 5000

@@ -1,0 +1,8 @@
+database:
+    engine: mysql
+    host: database
+    port: 3306
+    name: sklad
+    user: root
+    password: root
+history_table_name: migrations

@@ -4,6 +4,7 @@ COPY . /myapp
 RUN pip install pylint
 RUN pip install pylint-exit
 RUN pip install sqlfluff
+RUN pip install sqlalchemy
 RUN pip install -r requirements.txt
 RUN pylint ./app/*.py || pylint-exit $?
 RUN sqlfluff lint ./sklad/sklad.sql || pylint-exit $?

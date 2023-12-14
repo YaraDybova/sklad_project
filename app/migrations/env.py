@@ -26,6 +26,13 @@ config.set_main_option(
         '%', '%%'))
 target_metadata = current_app.extensions['migrate'].db.metadata
 
+alembic_config = config.get_section(config.config_ini_section)
+alembic_config['sqlalchemy.url'] = app.config['SQLALCHEMY_DATABASE_URI']
+engine = engine_from_config(
+    alembic_config,
+    prefix='sqlalchemy.',
+    poolclass=pool.NullPool)
+
 # other values from the config, defined by the needs of env.py,
 # can be acquired:
 # my_important_option = config.get_main_option("my_important_option")
